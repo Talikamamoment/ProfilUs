@@ -25,6 +25,8 @@
         .navbar ul {
             display: flex;
             list-style-type: none;
+            margin: 0;
+            padding: 0;
         }
         .navbar ul li {
             margin: 0 15px;
@@ -39,7 +41,7 @@
             text-align: center;
         }
         #about {
-            background: url('bcbc.jpg') no-repeat center center/cover;
+            background: url('bcgrd.jpg') no-repeat center center/cover;
             color: white;
         }
         .section h1 {
@@ -54,14 +56,23 @@
             display: flex;
             justify-content: center;
             margin-bottom: 30px;
+            flex-wrap: wrap;
         }
         .button-group a {
             background-color: black;
             color: white;
             padding: 10px 20px;
-            margin: 0 10px;
+            margin: 10px;
             text-decoration: none;
             border-radius: 5px;
+            flex: 1;
+            max-width: 200px;
+            text-align: center;
+        }
+        .gallery {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
         }
         .gallery img {
             width: 100%;
@@ -73,6 +84,57 @@
             color: white;
             padding: 30px;
             text-align: center;
+        }
+
+        /* Media Queries for smaller screens */
+        @media screen and (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+            .navbar img {
+                height: 40px;
+                margin-bottom: 10px;
+            }
+            .navbar ul {
+                flex-direction: column;
+            }
+            .navbar ul li {
+                margin: 10px 0;
+            }
+            .section {
+                padding: 40px 10px;
+            }
+            .section h1 {
+                font-size: 1.5em;
+            }
+            .section p {
+                font-size: 1em;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .navbar img {
+                height: 30px;
+            }
+            .navbar ul li a {
+                font-size: 14px;
+            }
+            .section {
+                padding: 30px 10px;
+            }
+            .section h1 {
+                font-size: 1.2em;
+            }
+            .section p {
+                font-size: 0.9em;
+            }
+            .button-group a {
+                padding: 8px 16px;
+                max-width: 150px;
+            }
+            .gallery img {
+                max-width: 100%;
+            }
         }
     </style>
 </head>
@@ -90,12 +152,9 @@
 
     <div class="section" id="about">
         <h1>Welcome to Talikama</h1>
-        <p>"Documentation for your celebrating Life"
-		complete your needs in
-• Photo, Video Production & Desain Grafis
-Talikama hadir untuk memenuhi setiap kebutuhan Anda dalam mengabadikan momen-momen berharga. Kami menawarkan layanan lengkap yang mencakup Fotografi, Produksi Video, dan Desain Grafis dengan standar profesional yang tinggi.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
         <div class="button-group">
-            <a href="PRICELIST TALIKAMA WISUDA.pdf" target="_blank">Pricelist Graduation</a>
+            <a href="Pricelist_Graduation.pdf" target="_blank">Pricelist Graduation</a>
             <a href="Pricelist_Engagement.pdf" target="_blank">Pricelist Engagement</a>
             <a href="Pricelist_Prewedding.pdf" target="_blank">Pricelist Prewedding</a>
             <a href="Pricelist_Wedding.pdf" target="_blank">Pricelist Wedding</a>
