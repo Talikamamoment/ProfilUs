@@ -18,18 +18,25 @@
             align-items: center;
             background-color: black;
             padding: 10px 20px;
+            flex-wrap: wrap; /* Ensure items wrap on smaller screens */
         }
         .navbar img {
-            height: 50px;
+            height: 60px; /* Increase the logo size */
+            margin-bottom: 10px;
         }
         .navbar ul {
             display: flex;
             list-style-type: none;
             margin: 0;
             padding: 0;
+            flex-wrap: wrap; /* Ensure items wrap on smaller screens */
+            justify-content: center;
+            width: 100%; /* Allow items to center on smaller screens */
         }
         .navbar ul li {
-            margin: 0 15px;
+            margin: 10px 15px;
+            flex: 1 1 auto; /* Ensure items adjust size and spacing on smaller screens */
+            text-align: center; /* Center the text in the nav items */
         }
         .navbar ul li a {
             color: white;
@@ -90,16 +97,11 @@
         @media screen and (max-width: 768px) {
             .navbar {
                 flex-direction: column;
+                align-items: center; /* Center align items in navbar */
             }
             .navbar img {
-                height: 40px;
+                height: 50px; /* Adjust logo size for tablets */
                 margin-bottom: 10px;
-            }
-            .navbar ul {
-                flex-direction: column;
-            }
-            .navbar ul li {
-                margin: 10px 0;
             }
             .section {
                 padding: 40px 10px;
@@ -114,7 +116,7 @@
 
         @media screen and (max-width: 480px) {
             .navbar img {
-                height: 30px;
+                height: 40px; /* Adjust logo size for phones */
             }
             .navbar ul li a {
                 font-size: 14px;
@@ -152,9 +154,7 @@
 
     <div class="section" id="about">
         <h1>Welcome to Talikama</h1>
-        <p>"Documentation for your celebrating Life"
-complete your needs in
-• Photo, Video Production & Desain Grafis.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
         <div class="button-group">
             <a href="PRICELIST TALIKAMA WISUDAA.pdf" target="_blank">Pricelist Graduation</a>
             <a href="Pricelist_Engagement.pdf" target="_blank">Pricelist Engagement</a>
@@ -166,9 +166,9 @@ complete your needs in
     <div class="section" id="features">
         <h1>Our Gallery</h1>
         <div class="gallery">
-            <img src="galeri 2.jpg" alt="Gallery Image 1">
+            <img src="galeri 3.jpg" alt="Gallery Image 1">
             <img src="galeri1.jpg" alt="Gallery Image 2">
-            <img src="galeri 3.jpg" alt="Gallery Image 3">
+            <img src="galeri 2.jpg" alt="Gallery Image 3">
         </div>
     </div>
 
