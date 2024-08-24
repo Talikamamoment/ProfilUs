@@ -17,26 +17,19 @@
             justify-content: space-between;
             align-items: center;
             background-color: black;
-            padding: 10px 20px;
-            flex-wrap: wrap; /* Ensure items wrap on smaller screens */
+            padding: 10px 30px; /* Adjust padding for less spacing */
         }
         .navbar img {
-            height: 60px; /* Increase the logo size */
-            margin-bottom: 10px;
+            height: 50px; /* Reduce logo size for better alignment */
         }
         .navbar ul {
             display: flex;
             list-style-type: none;
             margin: 0;
             padding: 0;
-            flex-wrap: wrap; /* Ensure items wrap on smaller screens */
-            justify-content: center;
-            width: 100%; /* Allow items to center on smaller screens */
         }
         .navbar ul li {
-            margin: 10px 15px;
-            flex: 1 1 auto; /* Ensure items adjust size and spacing on smaller screens */
-            text-align: center; /* Center the text in the nav items */
+            margin: 0 10px; /* Reduce spacing between menu items */
         }
         .navbar ul li a {
             color: white;
@@ -44,52 +37,54 @@
             font-weight: bold;
         }
         .section {
-            padding: 60px 20px;
+            padding: 40px 20px; /* Adjust padding for a more compact layout */
             text-align: center;
         }
         #about {
             background: url('bcgrd.jpg') no-repeat center center/cover;
             color: white;
+            padding: 60px 20px; /* Ensure spacing around content */
         }
         .section h1 {
-            font-size: 2em;
-            margin-bottom: 20px;
+            font-size: 1.8em; /* Adjust font size */
+            margin-bottom: 15px; /* Reduce margin between heading and text */
         }
         .section p {
-            font-size: 1.2em;
-            margin-bottom: 30px;
+            font-size: 1.1em; /* Adjust font size */
+            margin-bottom: 20px; /* Reduce spacing between elements */
         }
         .button-group {
             display: flex;
             justify-content: center;
-            margin-bottom: 30px;
+            margin-bottom: 20px; /* Adjust margin to balance layout */
             flex-wrap: wrap;
         }
         .button-group a {
             background-color: black;
             color: white;
-            padding: 10px 20px;
-            margin: 10px;
+            padding: 10px 15px; /* Adjust button padding */
+            margin: 5px; /* Reduce margin between buttons */
             text-decoration: none;
             border-radius: 5px;
             flex: 1;
-            max-width: 200px;
+            max-width: 180px; /* Adjust button width */
             text-align: center;
         }
         .gallery {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
+            margin-top: 20px; /* Add space between gallery and other content */
         }
         .gallery img {
             width: 100%;
-            max-width: 300px;
-            margin: 10px;
+            max-width: 280px; /* Adjust image size */
+            margin: 8px; /* Reduce margin for better image alignment */
         }
         .contact {
             background-color: black;
             color: white;
-            padding: 30px;
+            padding: 20px; /* Adjust padding for a more compact layout */
             text-align: center;
         }
 
@@ -97,14 +92,14 @@
         @media screen and (max-width: 768px) {
             .navbar {
                 flex-direction: column;
-                align-items: center; /* Center align items in navbar */
+                align-items: center;
             }
             .navbar img {
-                height: 50px; /* Adjust logo size for tablets */
+                height: 40px;
                 margin-bottom: 10px;
             }
             .section {
-                padding: 40px 10px;
+                padding: 30px 10px;
             }
             .section h1 {
                 font-size: 1.5em;
@@ -116,13 +111,13 @@
 
         @media screen and (max-width: 480px) {
             .navbar img {
-                height: 40px; /* Adjust logo size for phones */
+                height: 30px;
             }
             .navbar ul li a {
                 font-size: 14px;
             }
             .section {
-                padding: 30px 10px;
+                padding: 20px 10px;
             }
             .section h1 {
                 font-size: 1.2em;
@@ -131,7 +126,7 @@
                 font-size: 0.9em;
             }
             .button-group a {
-                padding: 8px 16px;
+                padding: 8px 12px;
                 max-width: 150px;
             }
             .gallery img {
@@ -154,7 +149,9 @@
 
     <div class="section" id="about">
         <h1>Welcome to Talikama</h1>
-        <p>Documentation for your celebrating Life. Talikama hadir untuk memenuhi setiap kebutuhan Anda dalam mengabadikan momen-momen berharga. Kami menawarkan layanan lengkap yang mencakup Fotografi, Produksi Video, dan Desain Grafis dengan standar profesional yang tinggi.</p>
+        <p>"Documentation for your celebrating Life"
+complete your needs in
+• Photo, Video Production & Desain Grafis.</p>
         <div class="button-group">
             <a href="PRICELIST TALIKAMA WISUDAA.pdf" target="_blank">Pricelist Graduation</a>
             <a href="Pricelist_Engagement.pdf" target="_blank">Pricelist Engagement</a>
