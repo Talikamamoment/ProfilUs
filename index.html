@@ -88,7 +88,7 @@
             text-align: center;
         }
 
-        /* Media Queries for smaller screens */
+        /* Media Queries for Android and iPhone */
         @media screen and (max-width: 768px) {
             .navbar {
                 flex-direction: column;
@@ -97,6 +97,22 @@
             .navbar img {
                 height: 40px;
                 margin-bottom: 10px;
+            }
+            .navbar ul li a {
+                font-size: 14px;
+            }
+            /* Modify the menu labels for smaller screens */
+            .navbar ul li:nth-child(1) a:before {
+                content: "Tentang";
+            }
+            .navbar ul li:nth-child(2) a:before {
+                content: "Keunggulan";
+            }
+            .navbar ul li:nth-child(3) a:before {
+                content: "Layanan";
+            }
+            .navbar ul li:nth-child(4) a:before {
+                content: "Testimoni";
             }
             .section {
                 padding: 30px 10px;
@@ -112,9 +128,6 @@
         @media screen and (max-width: 480px) {
             .navbar img {
                 height: 30px;
-            }
-            .navbar ul li a {
-                font-size: 14px;
             }
             .section {
                 padding: 20px 10px;
@@ -149,9 +162,7 @@
 
     <div class="section" id="about">
         <h1>Welcome to Talikama</h1>
-        <p>"Documentation for your celebrating Life"
-complete your needs in
-• Photo, Video Production & Desain Grafis.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
         <div class="button-group">
             <a href="PRICELIST TALIKAMA WISUDAA.pdf" target="_blank">Pricelist Graduation</a>
             <a href="Pricelist_Engagement.pdf" target="_blank">Pricelist Engagement</a>
@@ -163,15 +174,15 @@ complete your needs in
     <div class="section" id="features">
         <h1>Our Gallery</h1>
         <div class="gallery">
-            <img src="galeri 3.jpg" alt="Gallery Image 1">
+            <img src="galeri 2.jpg" alt="Gallery Image 1">
             <img src="galeri1.jpg" alt="Gallery Image 2">
-            <img src="galeri 2.jpg" alt="Gallery Image 3">
+            <img src="galeri 3.jpg" alt="Gallery Image 3">
         </div>
     </div>
 
     <div class="contact">
         <h1>Contact Us</h1>
-        <p>WhatsApp: 123-456-7890</p>
+        <p>WhatsApp: 0856-9341-7280</p>
     </div>
 
 </body>
