@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talikama</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            color: white;
+            background-color: #000;
+        }
+        header {
+            background-image: url('1.jpg'); /* Background for the first section */
+            background-size: cover;
+            background-position: center;
+            padding: 50px 20px;
+            text-align: left; /* Left-align text in the first section */
+            height: 100vh; /* Expand to full viewport height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center content vertically */
+        }
+        header h1 {
+            font-size: 48px;
+            margin-bottom: 5px; /* Reduce margin for closer alignment */
+            font-weight: bold; /* Making font solid */
+        }
+        header p {
+            font-size: 20px; /* Slightly larger and more cohesive font size */
+            margin-top: -10px; /* Move "Moment" text closer to "Talikama" */
+        }
+        header .description {
+            margin-top: 20px; /* Add space below "Moment" for the description */
+        }
+        nav {
+            display: flex;
+            justify-content: flex-end; /* Right-align the rubric text */
+            align-items: center; /* Vertically center the items */
+            padding: 10px 20px;
+            border-bottom: 2px solid white; /* Adding a white line below the rubric */
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+        nav img {
+            height: 50px; /* Adjust the size of the logo */
+            margin-right: auto; /* Align logo to the left */
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold; /* Bold text for rubric */
+        }
+        .gallery-section {
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .gallery-section h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .gallery-section h2::before {
+            content: '';
+            display: block;
+            width: 80%;
+            height: 2px;
+            background-color: white;
+            margin: 0 auto 20px auto;
+            position: absolute;
+            top: -30px; /* Adjust this value to position the line */
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .gallery-section img {
+            width: 200px;
+            height: auto;
+            margin: 10px;
+        }
+        .service-section {
+            background-image: url('2.jpg'); /* Background for the third section */
+            background-size: cover;
+            background-position: center;
+            padding: 10px 20px; /* Reduce padding to move content up */
+            text-align: left; /* Left-align text in the third section */
+            height: 100vh; /* Expand to full viewport height */
+            display: flex;
+            flex-direction: row; /* Align content side by side */
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .service-section h2 {
+            font-size: 32px;
+            margin-bottom: 1px;
+            position: relative;
+        }
+        .service-section h2::before {
+            content: '';
+            display: block;
+            width: 100%; /* Membuat garis memanjang sepanjang bagian */
+            height: 2px;
+            background-color: white;
+            margin: 0 auto 15px auto; /* Jarak antara garis dan teks */
+            position: absolute;
+            top: -170px; /* Menyesuaikan posisi garis di atas teks */
+            left: 0; /* Menempatkan garis di awal (kiri) */
+            transform: translateX(50%); /* Tidak ada pergeseran horizontal */
+        }
+        .service-section p {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* Style for the video container */
+        .video-container {
+            width: 50%;
+            padding-left: 20px; /* Add space between video and text */
+        }
+
+        /* Media Queries for Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 36px; /* Smaller font size for smaller screens */
+            }
+            header p, .service-section p {
+                font-size: 18px; /* Adjust paragraph font size */
+            }
+            .gallery-section h2 {
+                font-size: 28px;
+            }
+            .gallery-section img {
+                width: 150px; /* Reduce image size for smaller screens */
+                margin: 5px;
+            }
+            nav {
+                flex-direction: column; /* Stack the nav items vertically on smaller screens */
+                padding: 10px;
+            }
+            nav a {
+                margin: 10px 0; /* Add margin between links */
+            }
+            nav img {
+                height: 40px; /* Adjust logo size */
+                margin-bottom: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 30px 10px;
+            }
+            header h1 {
+                font-size: 28px; /* Further reduce font size */
+            }
+            header p, .service-section p {
+                font-size: 16px; /* Adjust paragraph font size */
+            }
+            .gallery-section h2 {
+                font-size: 24px;
+            }
+            .gallery-section img {
+                width: 120px; /* Further reduce image size */
+            }
+            .video-container {
+                width: 100%; /* Make video full-width on small screens */
+                padding-left: 0;
+                margin-top: 20px; /* Add space above the video */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <img src="logotlkm.png" alt="Talikama Logo"> 
+        <a href="#">Tentang</a>
+        <a href="#">Layanan</a>
+        <a href="#">FAQ</a>
+    </nav>
+    <h1>Talikama</h1>
+    <p>Moment</p>
+    <div class="description">
+        <p>Talikama adalah jasa fotografi, videografi, dan desain grafis profesional.</p>
+    </div>
+</header>
+
+<section class="gallery-section">
+    <h2>Our Gallery</h2>
+    <div>
+        <img src="galeri 3.jpg" alt="Gallery Image">
+        <img src="galeri1.jpg" alt="Gallery Image">
+        <img src="galeri 2.jpg" alt="Gallery Image">
+    </div>
+</section>
+
+<section class="service-section">
+    <div>
+        <h2>Professional Service</h2>
+        <p>Talikama adalah penyedia layanan fotografi, videografi, dan desain grafis.</p>
+    </div>
+    <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+    </div>
+</section>
+
+</body>
+</html>
