@@ -38,7 +38,7 @@
             display: flex;
             justify-content: flex-end; /* Right-align the rubric text */
             align-items: center; /* Vertically center the items */
-            padding: 10px 20px;
+            padding: 48px 70px;
             border-bottom: 2px solid white; /* Adding a white line below the rubric */
             position: absolute;
             top: 0;
@@ -55,31 +55,54 @@
             margin: 0 20px;
             font-weight: bold; /* Bold text for rubric */
         }
+        nav a:nth-child(3) {
+            border: 2px solid #FDBC00; /* Add oval border with yellow color */
+            padding: 5px 15px;
+            border-radius: 30px; /* Oval border */
+            background-color: #FDBC00; /* Yellow background color */
+            color: black; /* Black text color */
+        }
         .gallery-section {
             text-align: center;
             padding: 50px 20px;
-        }
-        .gallery-section h2 {
-            font-size: 32px;
-            margin-bottom: 20px;
             position: relative;
+            max-width: 100%;
+            overflow: hidden; /* Hide overflow for sliding effect */
         }
-        .gallery-section h2::before {
-            content: '';
-            display: block;
-            width: 80%;
-            height: 2px;
-            background-color: white;
-            margin: 0 auto 20px auto;
-            position: absolute;
-            top: -30px; /* Adjust this value to position the line */
-            left: 50%;
-            transform: translateX(-50%);
+        .gallery-wrapper {
+            display: flex;
+            transition: transform 0.5s ease;
         }
-        .gallery-section img {
-            width: 200px;
+        .gallery-slide {
+            min-width: 100%;
+            box-sizing: border-box;
+            padding: 10px;
+        }
+        .gallery-slide img {
+            width: 21%;
             height: auto;
-            margin: 10px;
+            display: block;
+            margin: 0 auto;
+        }
+        .gallery-slide h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .nav-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .nav-buttons button {
+            background-color: rgba(255, 255, 255, 0.5);
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            color: black;
         }
         .service-section {
             background-image: url('2.jpg'); /* Background for the third section */
@@ -90,32 +113,9 @@
             height: 100vh; /* Expand to full viewport height */
             display: flex;
             flex-direction: row; /* Align content side by side */
-            justify-content: flex-start;
+            justify-content: flex-end; /* Move content to the right */
             align-items: center;
         }
-        .service-section h2 {
-            font-size: 32px;
-            margin-bottom: 1px;
-            position: relative;
-        }
-        .service-section h2::before {
-            content: '';
-            display: block;
-            width: 100%; /* Membuat garis memanjang sepanjang bagian */
-            height: 2px;
-            background-color: white;
-            margin: 0 auto 15px auto; /* Jarak antara garis dan teks */
-            position: absolute;
-            top: -170px; /* Menyesuaikan posisi garis di atas teks */
-            left: 0; /* Menempatkan garis di awal (kiri) */
-            transform: translateX(50%); /* Tidak ada pergeseran horizontal */
-        }
-        .service-section p {
-            font-size: 20px;
-            margin-bottom: 20px;
-        }
-
-        /* Style for the video container */
         .video-container {
             width: 50%;
             padding-left: 20px; /* Add space between video and text */
@@ -126,11 +126,14 @@
             header h1 {
                 font-size: 36px; /* Smaller font size for smaller screens */
             }
-            header p, .service-section p {
+            header p {
                 font-size: 18px; /* Adjust paragraph font size */
             }
             .gallery-section h2 {
                 font-size: 28px;
+            }
+            .gallery-slide h2 {
+                font-size: 20px;
             }
             .gallery-section img {
                 width: 150px; /* Reduce image size for smaller screens */
@@ -147,6 +150,10 @@
                 height: 40px; /* Adjust logo size */
                 margin-bottom: 10px;
             }
+            nav a:nth-child(3) {
+                padding: 3px 10px; /* Adjust padding for smaller screens */
+                border-radius: 20px; /* Keep oval shape with smaller radius */
+            }
         }
 
         @media (max-width: 480px) {
@@ -156,11 +163,14 @@
             header h1 {
                 font-size: 28px; /* Further reduce font size */
             }
-            header p, .service-section p {
+            header p {
                 font-size: 16px; /* Adjust paragraph font size */
             }
             .gallery-section h2 {
                 font-size: 24px;
+            }
+            .gallery-slide h2 {
+                font-size: 18px;
             }
             .gallery-section img {
                 width: 120px; /* Further reduce image size */
@@ -177,36 +187,72 @@
 
 <header>
     <nav>
-        <img src="logotlkm.png" alt="Talikama Logo"> 
-        <a href="#">Tentang</a>
-        <a href="#">Layanan</a>
-        <a href="#">FAQ</a>
+        <a href="#">Price Guide</a>
+        <a href="#">Career</a>
+        <a href="#">Order</a>
     </nav>
-    <h1>Talikama</h1>
-    <p>Moment</p>
-    <div class="description">
-        <p>Talikama adalah jasa fotografi, videografi, dan desain grafis profesional.</p>
-    </div>
 </header>
 
 <section class="gallery-section">
     <h2>Our Gallery</h2>
-    <div>
-        <img src="galeri 3.jpg" alt="Gallery Image">
-        <img src="galeri1.jpg" alt="Gallery Image">
-        <img src="galeri 2.jpg" alt="Gallery Image">
+    <div class="gallery-wrapper" id="galleryWrapper">
+        <div class="gallery-slide">
+            <h2>Graduation</h2>
+            <img src="galeri 2.jpg" alt="Graduation Image">
+        </div>
+        <div class="gallery-slide">
+            <h2>Engagement</h2>
+            <img src="galeri1.jpg" alt="Engagement Image">
+        </div>
+        <div class="gallery-slide">
+            <h2>Prewedding</h2>
+            <img src="galeri 3.jpg" alt="Prewedding Image">
+        </div>
+        <div class="gallery-slide">
+            <h2>Wedding</h2>
+            <img src="galeri1.jpg" alt="Wedding Image">
+        </div>
+    </div>
+    <div class="nav-buttons">
+        <button onclick="prevSlide()">&#10094;</button>
+        <button onclick="nextSlide()">&#10095;</button>
     </div>
 </section>
 
 <section class="service-section">
-    <div>
-        <h2>Professional Service</h2>
-        <p>Talikama adalah penyedia layanan fotografi, videografi, dan desain grafis.</p>
-    </div>
     <div class="video-container">
-        <iframe width="560" height="315" src="https://www.youtube.com/watch?v=anCDGSM4Jqs" frameborder="0" allowfullscreen></iframe>
+        <!-- Menggunakan tag video HTML5 -->
+        <video width="560" height="315" controls>
+            <source src="cinematic.mp4" type="video/mp4">
+            Browser Anda tidak mendukung tag video HTML5.
+        </video>
     </div>
 </section>
+
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.gallery-slide');
+
+    function showSlide(index) {
+        const galleryWrapper = document.getElementById('galleryWrapper');
+        if (index >= slides.length) {
+            currentSlide = 0;
+        } else if (index < 0) {
+            currentSlide = slides.length - 1;
+        } else {
+            currentSlide = index;
+        }
+        galleryWrapper.style.transform = 'translateX(' + (-currentSlide * 100) + '%)';
+    }
+
+    function nextSlide() {
+        showSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+        showSlide(currentSlide - 1);
+    }
+</script>
 
 </body>
 </html>
