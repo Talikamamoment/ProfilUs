@@ -1,264 +1,538 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Talikama</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            color: white;
-            background-color: #000;
-        }
-        header {
-            background-image: url('1.jpg'); /* Background for the first section */
-            background-size: contain; /* Prevent background from being cut off */
-            background-position: center;
-            background-repeat: no-repeat;
-            padding: 50px 20px;
-            text-align: left;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        header h1 {
-            font-size: 48px;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        header p {
-            font-size: 20px;
-            margin-top: -10px;
-        }
-        header .description {
-            margin-top: 20px;
-        }
-        nav {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            padding: 48px 70px;
-            border-bottom: 2px solid white;
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-        }
-        nav img {
-            height: 50px;
-            margin-right: auto;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 20px;
-            font-weight: bold;
-        }
-        nav a:nth-child(3) {
-            border: 2px solid #FDBC00;
-            padding: 5px 15px;
-            border-radius: 30px;
-            background-color: #FDBC00;
-            color: black;
-        }
-        .gallery-section {
-            text-align: center;
-            padding: 50px 20px;
-            position: relative;
-            max-width: 100%;
-            overflow: hidden;
-        }
-        .gallery-wrapper {
-            display: flex;
-            transition: transform 0.5s ease;
-        }
-        .gallery-slide {
-            min-width: 100%;
-            box-sizing: border-box;
-            padding: 10px;
-        }
-        .gallery-slide img {
-            width: 100%; /* Adjust image width for responsiveness */
-            height: auto;
-            display: block;
-            margin: 0 auto;
-        }
-        .gallery-slide h2 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-        .nav-buttons {
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            transform: translateY(-50%);
-        }
-        .nav-buttons button {
-            background-color: rgba(255, 255, 255, 0.5);
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            font-size: 18px;
-            color: black;
-        }
-        .service-section {
-            background-image: url('2.jpg');
-            background-size: contain; /* Prevent background from being cut off */
-            background-position: center;
-            background-repeat: no-repeat;
-            padding: 10px 20px;
-            text-align: left;
-            height: 100vh;
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-end;
-            align-items: center;
-        }
-        .video-container {
-            width: 50%;
-            padding-left: 20px;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Talikama Moment</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url("Group 1.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      color: #fff;
+      font-family: 'Proxima Nova', sans-serif;
+    }
 
-        /* Media Queries for Responsive Design */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 36px;
-            }
-            header p {
-                font-size: 18px;
-            }
-            .gallery-section h2 {
-                font-size: 28px;
-            }
-            .gallery-slide h2 {
-                font-size: 20px;
-            }
-            .gallery-section img {
-                width: 90%; /* Adjust image size for smaller screens */
-                margin: 5px;
-            }
-            nav {
-                flex-direction: column;
-                padding: 10px;
-            }
-            nav a {
-                margin: 10px 0;
-            }
-            nav img {
-                height: 40px;
-                margin-bottom: 10px;
-            }
-            nav a:nth-child(3) {
-                padding: 3px 10px;
-                border-radius: 20px;
-            }
-            .video-container {
-                width: 100%; /* Make video full-width on small screens */
-                padding-left: 0;
-                margin-top: 20px;
-            }
-        }
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 100px;
+    }
 
-        @media (max-width: 480px) {
-            header {
-                padding: 30px 10px;
-            }
-            header h1 {
-                font-size: 28px;
-            }
-            header p {
-                font-size: 16px;
-            }
-            .gallery-section h2 {
-                font-size: 24px;
-            }
-            .gallery-slide h2 {
-                font-size: 18px;
-            }
-            .gallery-section img {
-                width: 80%; /* Further reduce image size for smaller screens */
-            }
-            .video-container {
-                width: 100%;
-                padding-left: 0;
-                margin-top: 20px;
-            }
-        }
-    </style>
+    .logo {
+      display: flex;
+      align-items: center;
+      margin-top: -70px;
+      border-bottom: 2px solid white; /* Add white line under the logo */
+    }
+
+    .logo img {
+      width: 100px;
+      margin-right: 7px;
+    }
+
+    .rubric {
+      text-align: center;
+      font-size: 2em;
+      margin-top: -100px;
+    }
+
+    .celebrating {
+      font-size: 4em;
+      margin-top: -10px;
+      color: #FDBE01;
+    }
+
+    .description {
+      text-align: left;
+      font-size: 1.2em;
+      margin-bottom: 10px;
+      padding: 10px 40px;
+    }
+
+    .audio-visual {
+      text-align: left;
+      font-size: 1.2em;
+      margin-top: 130px;
+      padding: 10px 40px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: -70px;
+    }
+
+    .button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #FDBE01;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 1em;
+    }
+
+    .buttons .button:last-child {
+      border: 2px solid #FDBE01;
+      border-radius: 50px;
+    }
+
+    .buttons .button:nth-child(1), 
+    .buttons .button:nth-child(2) {
+      background-color: transparent;
+      color: #fff;
+      border: none;
+      font-weight: bold;
+    }
+
+    /* Style for Sheet 2 (Photo Gallery) */
+    .gallery-container {
+      margin: 0;
+      padding: 50px 0;
+      max-width: 100%;
+      text-align: center;
+      background-color: #000;
+      min-height: 90vh;
+    }
+
+    .gallery-title {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      color: #FDBE01;
+    }
+
+    .gallery {
+      display: flex;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .gallery img {
+      width: 20%;
+      height: auto;
+    }
+
+    .gallery-slide {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .gallery img {
+      max-width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .slide-button {
+      padding: 10px 20px;
+      margin: 0 10px;
+      background-color: #FDBE01;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      color: #000;
+      border-radius: 5px;
+    }
+
+    /* Remove any gaps between sections */
+    html, body {
+      height: 100%;
+    }
+
+    /* Ensure the first section's background doesn't overlap or create unwanted margins */
+    .container:first-of-its-kind {
+      padding: 0;
+      margin: 0;
+    }
+
+    /* Sheet 3 (New Section) */
+    .sheet3-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-image: url("2.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 100vh;
+      padding: 100px;
+      color: #fff;
+    }
+
+    .sheet3-content {
+      max-width: 50%;
+    }
+
+    .sheet3-title {
+      font-size: 3em;
+      margin-bottom: -20px;
+      color: #FDBE01;
+    }
+
+    .sheet3-subtitle {
+      font-size: 2em;
+      color: #fff;
+    }
+
+    .sheet3-subtitle2 {
+      font-size: 1em;
+      margin-bottom: -20px;
+      color: #fff;
+    }
+
+    .youtube-frame {
+      width: 560px;
+      height: 315px;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.8);
+      color: #fff;
+      padding: 20px;
+    }
+
+    .modal-content {
+      background-color: #333;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #fff;
+      width: 80%;
+      max-width: 800px;
+    }
+
+    .modal-header {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+
+    .modal-body {
+      font-size: 1em;
+    }
+
+    .close {
+      color: #FDBE01;
+      float: right;
+      font-size: 2em;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* Media Queries for Mobile Responsiveness */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+      }
+
+      .logo img {
+        width: 70px;
+      }
+
+      .rubric {
+        font-size: 1.5em;
+      }
+
+      .celebrating {
+        font-size: 2.5em;
+      }
+
+      .description, .audio-visual {
+        padding: 10px;
+        font-size: 1em;
+      }
+
+      .buttons {
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      .gallery img {
+        width: 50%;
+      }
+
+      .youtube-frame {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 10px;
+      }
+
+      .logo img {
+        width: 50px;
+      }
+
+      .rubric {
+        font-size: 1.2em;
+      }
+
+      .celebrating {
+        font-size: 2em;
+      }
+
+      .description, .audio-visual {
+        font-size: 0.9em;
+        padding: 5px;
+      }
+
+      .buttons .button {
+        padding: 8px 15px;
+        font-size: 0.9em;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<header>
-    <nav>
-        <a href="#">Price Guide</a>
-        <a href="#">Career</a>
-        <a href="#">Order</a>
-    </nav>
-</header>
-
-<section class="gallery-section">
-    <h2>Our Gallery</h2>
-    <div class="gallery-wrapper" id="galleryWrapper">
-        <div class="gallery-slide">
-            <h2>Graduation</h2>
-            <img src="galeri2.jpg" alt="Graduation Image">
-        </div>
-        <div class="gallery-slide">
-            <h2>Engagement</h2>
-            <img src="galeri1.jpg" alt="Engagement Image">
-        </div>
-        <div class="gallery-slide">
-            <h2>Prewedding</h2>
-            <img src="galeri3.jpg" alt="Prewedding Image">
-        </div>
-        <div class="gallery-slide">
-            <h2>Wedding</h2>
-            <img src="galeri1.jpg" alt="Wedding Image">
-        </div>
+  <!-- Sheet 1 Content -->
+  <div class="container">
+    <div class="logo">
+      <img src="logotlkm.png" alt="Talikama Logo"> 
+      <div>
+        <span class="rubric">TALIKAMA</span>
+        <span class="rubric">moment.</span>
+      </div>
     </div>
-    <div class="nav-buttons">
-        <button onclick="prevSlide()">&#10094;</button>
-        <button onclick="nextSlide()">&#10095;</button>
+    <div class="buttons">
+      <button class="button" onclick="showPriceGuide()">Price Guide</button>
+      <button class="button" onclick="showCareer()">Career</button>
+      <button class="button" onclick="orderWhatsapp()">Order</button>
     </div>
-</section>
+  </div>
 
-<section class="service-section">
-    <div class="video-container">
-        <video width="560" height="315" controls>
-            <source src="cinematic.mp4" type="video/mp4">
-            Browser Anda tidak mendukung tag video HTML5.
-        </video>
+  <div class="container">
+    <div>
+      <h1 class="rubric" style="text-align: left;">Dokumentation For Your</h1>
+      <h1 class="celebrating">CELEBRATING LIFE</h1>
+      <p class="description">Setiap perayaan adalah simfoni jiwa, resonansi mendalam di hati setiap individu. Rasa syukur selaras dalam setiap pencapaian dan pertemuan, berubah menjadi bentuk perayaan yang indah.</p>
     </div>
-</section>
+    <div>
+      <p class="audio-visual">Dokumentasi melalui Audio Visual efektif dalam merekam kenangan dalam setiap perayaan manusia. Di setiap momen yang berharga, tersembunyi makna yang mendalam, mengabadikan keindahan dalam karya-karya yang bertahan sepanjang waktu.</p>
+    </div>
+  </div>
 
-<script>
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.gallery-slide');
+  <!-- Sheet 2: Photo Gallery Section -->
+  <div class="gallery-container">
+    <h1 class="gallery-title">Our Gallery</h1>
+    <div class="gallery">
+      <div class="gallery-slide" id="gallery-slide">
+        <img src="galeri 2.jpg" alt="Photo 1">
+        <img src="galeri1.jpg" alt="Photo 2">
+        <img src="galeri 3.jpg" alt="Photo 3">
+      </div>
+    </div>
+    <div class="button-container">
+      <button class="slide-button" onclick="prevSlide()">Prev</button>
+      <button class="slide-button" onclick="nextSlide()">Next</button>
+    </div>
+  </div>
+
+  <!-- Sheet 3 (New Section) -->
+  <div class="sheet3-container">
+    <div class="sheet3-content">
+      <h1 class="sheet3-title">MAKE YOUR</h1>
+      <h1 class="sheet3-subtitle">SWEET MEMORIES</h1>
+      <h1 class="sheet3-subtitle2">by Talikama</h1>
+    </div>
+    <div>
+      <iframe class="youtube-frame" src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <!-- Modal for Price Guide -->
+  <div id="priceModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('priceModal')">&times;</span>
+      <div class="modal-header">Price List – Talikama Photo & Video Services</div>
+      <div class="modal-body">
+        <h2>Wedding Photography & Videography</h2>
+        <p><strong>Package A (Basic)</strong><br>
+          Photography (5 hours)<br>
+          Videography (5 hours)<br>
+          1 Photographer & 1 Videographer<br>
+          300 edited photos<br>
+          Highlight video (5-7 minutes)<br>
+          Price: Rp 5.000.000
+        </p>
+        <p><strong>Package B (Premium)</strong><br>
+          Photography (Full day coverage)<br>
+          Videography (Full day coverage)<br>
+          2 Photographers & 2 Videographers<br>
+          500 edited photos<br>
+          Highlight video (7-10 minutes)<br>
+          Full wedding documentary video (30-45 minutes)<br>
+          Price: Rp 10.000.000
+        </p>
+        <p><strong>Package C (Exclusive)</strong><br>
+          Photography (Pre-wedding + Full day coverage)<br>
+          Videography (Pre-wedding + Full day coverage)<br>
+          2 Photographers & 2 Videographers<br>
+          800 edited photos<br>
+          Highlight video (7-10 minutes)<br>
+          Full wedding documentary video (45-60 minutes)<br>
+          Wedding album (30 pages)<br>
+          Price: Rp 15.000.000
+        </p>
+        <h2>Prewedding Photography & Videography</h2>
+        <p><strong>Package A (Basic)</strong><br>
+          Photography (4 hours)<br>
+          2 Locations<br>
+          200 edited photos<br>
+          Price: Rp 2.500.000
+        </p>
+        <p><strong>Package B (Premium)</strong><br>
+          Photography (6 hours)<br>
+          Videography (6 hours)<br>
+          3 Locations<br>
+          300 edited photos<br>
+          Highlight video (3-5 minutes)<br>
+          Price: Rp 5.000.000
+        </p>
+        <p><strong>Package C (Exclusive)</strong><br>
+          Photography (Full day)<br>
+          Videography (Full day)<br>
+          Unlimited locations<br>
+          500 edited photos<br>
+          Highlight video (5-7 minutes)<br>
+          Prewedding album (20 pages)<br>
+          Price: Rp 8.000.000
+        </p>
+        <h2>Engagement Photography & Videography</h2>
+        <p><strong>Package A (Basic)</strong><br>
+          Photography (3 hours)<br>
+          150 edited photos<br>
+          Price: Rp 2.000.000
+        </p>
+        <p><strong>Package B (Premium)</strong><br>
+          Photography (4 hours)<br>
+          Videography (4 hours)<br>
+          200 edited photos<br>
+          Highlight video (3-5 minutes)<br>
+          Price: Rp 4.000.000
+        </p>
+        <p><strong>Package C (Exclusive)</strong><br>
+          Photography (6 hours)<br>
+          Videography (6 hours)<br>
+          300 edited photos<br>
+          Highlight video (5-7 minutes)<br>
+          Price: Rp 6.000.000
+        </p>
+        <h2>Graduation Photography</h2>
+        <p><strong>Package A (Individual)</strong><br>
+          Photography (2 hours)<br>
+          100 edited photos<br>
+          Price: Rp 1.500.000
+        </p>
+        <p><strong>Package B (Group)</strong><br>
+          Photography (4 hours)<br>
+          Up to 10 graduates<br>
+          300 edited photos<br>
+          Price: Rp 3.500.000
+        </p>
+        <p><strong>Package C (Ceremony + Portrait)</strong><br>
+          Photography (Full day)<br>
+          500 edited photos<br>
+          Group photos + Individual portraits<br>
+          Price: Rp 5.000.000
+        </p>
+        <h2>Additional services:</h2>
+        <p>Drone Footage: Rp 1.500.000<br>
+           Photo Album: Rp 1.000.000 – Rp 3.000.000 (depending on size)<br>
+           Extra Hour: Rp 500.000 / hour
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Career -->
+  <div id="careerModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('careerModal')">&times;</span>
+      <div class="modal-header">Career Opportunities at Talikama</div>
+      <div class="modal-body">
+        <p>Explore exciting career opportunities with Talikama. Join our dynamic team and contribute to capturing memorable moments for our clients.</p>
+        <h3>Current Openings:</h3>
+        <ul>
+          <li>Photographer</li>
+          <li>Videographer</li>
+          <li>Graphic Designer</li>
+          <li>Marketing Specialist</li>
+        </ul>
+        <p>For more details, please contact us at <a href="mailto:careers@talikama.com">careers@talikama.com</a>.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let currentIndex = 0;
+    const slide = document.getElementById('gallery-slide');
+    const images = document.querySelectorAll('.gallery img');
+    const totalImages = images.length;
 
     function showSlide(index) {
-        const galleryWrapper = document.getElementById('galleryWrapper');
-        if (index >= slides.length) {
-            currentSlide = 0;
-        } else if (index < 0) {
-            currentSlide = slides.length - 1;
-        } else {
-            currentSlide = index;
-        }
-        galleryWrapper.style.transform = 'translateX(' + (-currentSlide * 100) + '%)';
+      const slideWidth = images[0].clientWidth;
+      slide.style.transform = `translateX(-${index * slideWidth}px)`;
     }
 
     function nextSlide() {
-        showSlide(currentSlide + 1);
+      currentIndex = (currentIndex + 1) % totalImages;
+      showSlide(currentIndex);
     }
 
     function prevSlide() {
-        showSlide(currentSlide - 1);
+      currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+      showSlide(currentIndex);
     }
-</script>
+
+    window.addEventListener('resize', () => showSlide(currentIndex));
+
+    // Price Guide button functionality
+    function showPriceGuide() {
+      document.getElementById('priceModal').style.display = 'block';
+    }
+
+    // Career button functionality
+    function showCareer() {
+      document.getElementById('careerModal').style.display = 'block';
+    }
+
+    // Order button functionality
+    function orderWhatsapp() {
+      window.open('https://wa.me/123456789?text=Hello%20Talikama', '_blank');
+    }
+
+    // Close modal functionality
+    function closeModal(modalId) {
+      document.getElementById(modalId).style.display = 'none';
+    }
+  </script>
 
 </body>
 </html>
